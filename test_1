@@ -1,2 +1,31 @@
-asdasdasd
-asdasdasdasdasd
+#!/bin/bash
+#this is a simple CI script
+
+GIT_REPO="https://github.com/zivkashtan/course.git"
+LOCAL_CLONE_DIR="src/"
+
+function clean(){
+    rm -rf "$LOCAL_CLONE_DIR"
+}
+
+function sourceCodePull(){
+    git clone "$GIT_REPO" "$LOCAL_CLONE_DIR"
+}
+
+function build(){
+    cd "$LOCAL_CLONE_DIR"
+    mvn package
+}
+
+function artifactPublishing(){
+  #some code
+  echo "here is your code"
+}
+
+function main(){
+    clean
+    sourceCodePull
+    build
+    artifactPublishing
+}
+main
