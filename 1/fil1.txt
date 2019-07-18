@@ -1,1 +1,1 @@
-my message
+ZERO+ONE=1
